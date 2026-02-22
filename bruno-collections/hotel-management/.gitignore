@@ -1,0 +1,3 @@
+# Bruno secret variables are stored securely and not written to environment files
+# Non-secret vars can be committed, secret vars are managed by Bruno's secure storage
+# See: https://docs.usebruno.com/secrets-management/secret-variables

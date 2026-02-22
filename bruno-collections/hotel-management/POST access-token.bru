@@ -1,0 +1,55 @@
+meta {
+  name: POST access-token
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://hotel-management-service.us.auth0.com/oauth/token
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "client_id": "{{AUTH0_CLIENT_ID}}",
+    "client_secret": "{{AUTH0_CLIENT_SECRET}}",
+    "audience": "https://api.hotel-management.boonyarit.me",
+    "grant_type": "password",
+    "username": "{{AUTH0_USERNAME}}",
+    "password": "{{AUTH0_PASSWORD}}",
+    "scope": "openid profile email"
+  }
+}
+
+script:post-response {
+  try {
+    if (!res) {
+      console.error("[POST access-token] No response received");
+      return;
+    }
+
+    const status = res.status;
+    const body = res.body;
+
+    if (status !== 200) {
+      console.error(`[POST access-token] Failed with status ${status}:`, body?.error_description || body?.error || "Unknown error");
+      return;
+    }
+
+    if (!body?.access_token) {
+      console.error("[POST access-token] Response did not contain an access_token");
+      return;
+    }
+
+    bru.setEnvVar("ACCESS_TOKEN", body.access_token);
+    console.log("[POST access-token] ACCESS_TOKEN set successfully");
+  } catch (err) {
+    console.error("[POST access-token] Unexpected error while setting ACCESS_TOKEN:", err.message);
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
