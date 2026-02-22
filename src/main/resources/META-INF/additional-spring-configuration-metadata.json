@@ -1,0 +1,44 @@
+{
+  "properties": [
+    {
+      "name": "app.cors.allowed-origins",
+      "type": "java.lang.String",
+      "description": "Comma-separated list of allowed origins for CORS"
+    },
+    {
+      "name": "app.cors.allowed-methods",
+      "type": "java.lang.String",
+      "description": "Comma-separated list of allowed HTTP methods for CORS"
+    },
+    {
+      "name": "app.cors.allowed-headers",
+      "type": "java.lang.String",
+      "description": "Comma-separated list of allowed headers for CORS"
+    },
+    {
+      "name": "app.cors.exposed-headers",
+      "type": "java.lang.String",
+      "description": "Comma-separated list of exposed headers for CORS"
+    },
+    {
+      "name": "app.cors.allow-credentials",
+      "type": "java.lang.Boolean",
+      "description": "Whether to allow credentials in CORS requests"
+    },
+    {
+      "name": "app.cors.max-age",
+      "type": "java.lang.Long",
+      "description": "Maximum age (in seconds) for CORS preflight cache"
+    },
+    {
+      "name": "spring.security.oauth2.resourceserver.jwt.issuer-uri",
+      "type": "java.lang.String",
+      "description": "The URI of the OAuth2 authorization server issuer"
+    },
+    {
+      "name": "spring.security.oauth2.resourceserver.jwt.audiences",
+      "type": "java.lang.String",
+      "description": "The expected audience for JWT token validation"
+    }
+  ]
+}
