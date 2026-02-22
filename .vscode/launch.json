@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-Application<hotel-management-service>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "me.boonyarit.hotel.management.Application",
+      "projectName": "hotel-management-service",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
